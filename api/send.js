@@ -1,0 +1,41 @@
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const TO_EMAIL = process.env.CONTACT_EMAIL || 'toms.liepins@gmail.com';
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { name, email, phone, dates, participants, message } = req.body;
+
+  if (!name || !email || !dates) {
+    return res.status(400).json({ error: 'Trūkst obligāto lauku' });
+  }
+
+  try {
+    await resend.emails.send({
+      from: 'Yatra.lv <noreply@yatra.lv>',
+      to: TO_EMAIL,
+      replyTo: email,
+      subject: `Jauns pieteikums — ${name}`,
+      html: `
+        <h2>Jauns pieteikums no yatra.lv</h2>
+        <table style="border-collapse:collapse;font-family:sans-serif;font-size:15px">
+          <tr><td style="padding:6px 12px 6px 0;color:#888">Vārds</td><td style="padding:6px 0">${name}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;color:#888">E-pasts</td><td style="padding:6px 0">${email}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;color:#888">Tālrunis</td><td style="padding:6px 0">${phone || '—'}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;color:#888">Datumi</td><td style="padding:6px 0">${dates}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;color:#888">Dalībnieki</td><td style="padding:6px 0">${participants || '1'}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0;color:#888">Ziņojums</td><td style="padding:6px 0">${message || '—'}</td></tr>
+        </table>
+      `,
+    });
+
+    return res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('Resend error:', err);
+    return res.status(500).json({ error: 'Neizdevās nosūtīt e-pastu' });
+  }
+}

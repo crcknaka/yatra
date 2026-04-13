@@ -19,7 +19,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// Form submission via Web3Forms
+// Form submission via Resend API
 const form = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
@@ -30,10 +30,13 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.textContent = 'Nosūta...';
 
+  const data = Object.fromEntries(new FormData(form));
+
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const res = await fetch('/api/send', {
       method: 'POST',
-      body: new FormData(form),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     });
 
     if (res.ok) {
