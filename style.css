@@ -11,8 +11,8 @@
   --c-gold: #c9a84c;
   --c-border: #ddd5cb;
   --c-white: #ffffff;
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', system-ui, sans-serif;
   --max-w: 1100px;
   --section-py: clamp(4rem, 8vw, 7rem);
 }
@@ -187,11 +187,11 @@ a:hover { color: var(--c-accent-hover); }
   color: var(--c-white);
 }
 
-.hero__subtitle {
+.hero__label {
   font-family: var(--font-body);
-  font-size: clamp(.85rem, 2vw, 1rem);
-  font-weight: 400;
-  letter-spacing: .2em;
+  font-size: clamp(.8rem, 2vw, .9rem);
+  font-weight: 500;
+  letter-spacing: .25em;
   text-transform: uppercase;
   color: var(--c-gold);
   margin-bottom: 1.5rem;
@@ -199,19 +199,45 @@ a:hover { color: var(--c-accent-hover); }
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 400;
   line-height: 1.15;
-  margin-bottom: 1.2rem;
-  letter-spacing: .02em;
+  margin-bottom: 1.5rem;
+  letter-spacing: .01em;
 }
 
-.hero__desc {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+.hero__dates {
+  font-size: clamp(.95rem, 2vw, 1.1rem);
   font-weight: 300;
   color: rgba(255,255,255,.7);
-  margin-bottom: 2.5rem;
+  margin-bottom: .5rem;
   letter-spacing: .04em;
+}
+
+.hero__open {
+  font-size: .9rem;
+  font-weight: 400;
+  color: var(--c-gold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.hero__price {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 2.5rem;
+}
+
+.hero__price strong {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.hero__price span {
+  color: rgba(255,255,255,.5);
+  font-size: .9rem;
 }
 
 /* === Sections === */
@@ -225,48 +251,58 @@ a:hover { color: var(--c-accent-hover); }
 
 .section__title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 400;
   text-align: center;
   margin-bottom: 1rem;
   color: var(--c-text);
 }
 
+.section__subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  color: var(--c-text-muted);
+  margin-bottom: 1.5rem;
+}
+
 .section__intro {
   max-width: 750px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2.5rem;
   text-align: center;
   color: var(--c-text-muted);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .section__intro p + p { margin-top: 1rem; }
 
-/* === Features === */
+/* === Features grid === */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .feature {
-  text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.8rem;
   background: var(--c-white);
   border-radius: 8px;
   border: 1px solid var(--c-border);
 }
 
-.feature__icon { font-size: 2.2rem; margin-bottom: 1rem; }
 .feature h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: .75rem;
+  color: var(--c-text);
 }
-.feature p { color: var(--c-text-muted); font-size: .95rem; }
+
+.feature p { color: var(--c-text-muted); font-size: .95rem; line-height: 1.75; }
 
 /* === Two Column === */
 .two-col {
@@ -277,47 +313,84 @@ a:hover { color: var(--c-accent-hover); }
 .two-col p { color: var(--c-text-muted); font-size: 1.02rem; }
 .two-col p + p { margin-top: 1rem; }
 
-/* === Cards === */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+/* === Journey === */
+.journey {
+  text-align: center;
 }
 
-.card {
-  padding: 2rem;
-  background: var(--c-white);
-  border-radius: 8px;
-  border: 1px solid var(--c-border);
+.journey__main {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--c-text);
+  margin-bottom: 1rem;
 }
 
-.card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: .75rem;
-  color: var(--c-accent);
+.journey p {
+  color: var(--c-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
 }
 
-.card p { color: var(--c-text-muted); font-size: .95rem; }
+.journey__sub {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  font-weight: 400;
+  color: var(--c-text) !important;
+}
+
+.journey ul {
+  list-style: none;
+  display: inline-block;
+  text-align: left;
+  margin-top: .5rem;
+}
+
+.journey li {
+  padding: .4rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  color: var(--c-text-muted);
+  font-size: .97rem;
+}
+
+.journey li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .75rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
 
 /* === Leaders === */
 .leaders {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .leader h3 {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--c-accent);
 }
 
-.leader p { color: var(--c-text-muted); font-size: .97rem; }
+.leader p { color: var(--c-text-muted); font-size: .97rem; line-height: 1.8; }
+
+.leaders__note {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  font-style: italic;
+  color: var(--c-text-muted);
+  font-size: .97rem;
+  line-height: 1.8;
+}
 
 /* === Pricing === */
 .pricing {
@@ -492,15 +565,20 @@ a:hover { color: var(--c-accent-hover); }
 .footer {
   padding: 2.5rem 0;
   background: var(--c-text);
-  color: rgba(255,255,255,.5);
-  font-size: .85rem;
+  color: rgba(255,255,255,.45);
+  font-size: .82rem;
   text-align: center;
 }
 
 .footer__note {
   max-width: 700px;
   margin: 0 auto .75rem;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.footer__copy {
+  margin-top: 1rem;
+  color: rgba(255,255,255,.3);
 }
 
 /* === Responsive === */
@@ -536,5 +614,7 @@ a:hover { color: var(--c-accent-hover); }
     grid-template-columns: 1fr;
   }
 
-  .hero__title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+  .features {
+    grid-template-columns: 1fr;
+  }
 }
