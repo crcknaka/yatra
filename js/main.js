@@ -12,7 +12,6 @@ navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('nav__links--open');
 });
 
-// Close mobile menu on link click
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('nav__links--open');
@@ -20,10 +19,10 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // Language switcher
-const langToggle = document.getElementById('langToggle');
+const langToggleBtn = document.getElementById('langToggle');
 const langMenu = document.getElementById('langMenu');
 
-langToggle.addEventListener('click', (e) => {
+langToggleBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   langMenu.classList.toggle('lang__menu--open');
 });
@@ -34,21 +33,15 @@ document.addEventListener('click', () => {
 
 langMenu.querySelectorAll('.lang__option').forEach(btn => {
   btn.addEventListener('click', () => {
-    const lang = btn.dataset.lang;
-    document.documentElement.lang = lang;
-    document.documentElement.dataset.lang = lang;
-    langToggle.textContent = lang.toUpperCase();
-    langMenu.querySelectorAll('.lang__option').forEach(b => b.classList.remove('lang__option--active'));
-    btn.classList.add('lang__option--active');
+    setLang(btn.dataset.lang);
     langMenu.classList.remove('lang__menu--open');
-    localStorage.setItem('yatra-lang', lang);
   });
 });
 
 // Restore saved language
 const savedLang = localStorage.getItem('yatra-lang');
 if (savedLang && savedLang !== 'lv') {
-  langMenu.querySelector(`[data-lang="${savedLang}"]`)?.click();
+  setLang(savedLang);
 }
 
 // Form submission via Resend API
@@ -60,7 +53,7 @@ form.addEventListener('submit', async (e) => {
 
   const btn = form.querySelector('button[type="submit"]');
   btn.disabled = true;
-  btn.textContent = 'Nosūta...';
+  btn.textContent = t('form.sending');
 
   const data = Object.fromEntries(new FormData(form));
 
@@ -80,7 +73,7 @@ form.addEventListener('submit', async (e) => {
     }
   } catch {
     btn.disabled = false;
-    btn.textContent = 'Nosūtīt pieteikumu';
-    alert('Kļūda nosūtot formu. Lūdzu, sazinieties ar mums pa e-pastu vai tālruni.');
+    btn.textContent = t('form.submit');
+    alert(t('form.error'));
   }
 });
