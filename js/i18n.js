@@ -83,7 +83,11 @@ const translations = {
     "rooms.cottage.text": "Tradicionālas Keralas stila koteedžas palmu ieskautā dārzā. Autentiska atmosfēra un tieša saikne ar dabu — lieliska izvēle tiem, kas meklē mieru un īpašu kolorītu.",
     "rooms.standard.title": "Standarta numurs",
     "rooms.standard.text": "Komfortabls divvietīgs numurs ar visām nepieciešamajām ērtībām. Vienkāršs, mājīgs un praktisks — iekļauts programmas pamatcenā.",
+    "rooms.more": "Apskatīt fotogrāfijas →",
     "rooms.note": "Istabu pieejamība un gala cena tiek precizēta pēc pieteikuma iesniegšanas. Sazinies ar mums, lai izvēlētos sev piemērotāko variantu.",
+    "rooms.deluxe.full": "Deluxe numurs atrodas klīnikas jaunajā korpusā — plašāks, modernāks un ar augstāku komforta līmeni. Istabā ir ērta divguļamā gulta ar moskītu tīklu, gaiša atpūtas zona, liela vannas istaba un izeja uz terasi ar skatu uz baseinu un tropisku dārzu. Pēc pieprasījuma iespējams pasūtīt kondicionieri par papildu maksu. Šī ir ideāla izvēle tiem, kas vēlas ekskluzīvākus dzīvošanas apstākļus retrīta laikā.",
+    "rooms.cottage.full": "Keralas koteedžas ir tradicionālas, Keralas stilā celtas mājiņas, kas atrodas palmu un tropisku augu ieskautā dārzā. Katra koteedža piedāvā mierīgu, privātu atmosfēru ar autentisku kolorītu un tiešu saikni ar dabu. Interjers ir vienkāršs, bet mājīgs — ar kokmateriāliem, dabīgiem audumiem un gaišu atpūtas telpu. Tā ir lieliska izvēle tiem, kas meklē dziļāku iegremdēšanos Indijas vidē un dabas klusumā.",
+    "rooms.standard.full": "Standarta numurs ir komfortabls divvietīgs numurs klīnikas galvenajā korpusā. Istabā ir divas vai viena divguļamā gulta ar moskītu tīklu, darba galds, skapis un pilnībā aprīkota vannas istaba. Tas ir vienkāršs, mājīgs un praktisks izvēlējums — visas nepieciešamās ērtības iekļautas programmas pamatcenā. Ideāli piemērots tiem, kas lielāko daļu laika vēlas pavadīt procedūrās un praksēs, nevis istabā.",
 
     // Prices
     "prices.title": "Reģistrācijas detaļas",
