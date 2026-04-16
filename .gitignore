@@ -1,2 +1,14 @@
 yatra.pdf
 yatra.txt
+YATRA-kerala.txt
+YATRA-dienvidindija.txt
+
+# Secrets / local env
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+
+.vercel
