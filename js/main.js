@@ -8,21 +8,38 @@ window.addEventListener('scroll', () => {
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('nav__links--open');
-});
+// Mobile menu: backdrop click + Escape close
+const navBackdrop = document.createElement('div');
+navBackdrop.className = 'nav__backdrop';
+navBackdrop.setAttribute('aria-hidden', 'true');
+document.body.appendChild(navBackdrop);
 
-const navClose = document.getElementById('navClose');
-if (navClose) {
-  navClose.addEventListener('click', () => {
-    navLinks.classList.remove('nav__links--open');
-  });
+function openMenu() {
+  navLinks.classList.add('nav__links--open');
+  navBackdrop.classList.add('nav__backdrop--open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  navLinks.classList.remove('nav__links--open');
+  navBackdrop.classList.remove('nav__backdrop--open');
+  document.body.style.overflow = '';
 }
 
+navToggle.addEventListener('click', () => {
+  navLinks.classList.contains('nav__links--open') ? closeMenu() : openMenu();
+});
+
+navBackdrop.addEventListener('click', closeMenu);
+
+const navClose = document.getElementById('navClose');
+if (navClose) navClose.addEventListener('click', closeMenu);
+
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('nav__links--open');
-  });
+  link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks.classList.contains('nav__links--open')) closeMenu();
 });
 
 // Language switcher

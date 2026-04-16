@@ -238,6 +238,23 @@ a:hover { color: var(--c-accent-hover); }
 .lang__option:hover { background: var(--c-bg-alt); color: var(--c-text); }
 .lang__option--active { font-weight: 600; color: var(--c-accent); }
 
+.nav__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(20, 16, 10, .55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.nav__backdrop--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .nav__close-item { display: none; list-style: none; }
 
 .nav__close {
