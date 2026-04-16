@@ -2,6 +2,7 @@ const translations = {
   lv: {
     // Nav
     "nav.home": "Sākums",
+    "nav.celojumi": "Ceļojumi",
     "nav.parmums": "Par mums",
     "nav.pancakarma": "Pančakarma",
     "nav.pilgrimage": "Svētceļojums",
