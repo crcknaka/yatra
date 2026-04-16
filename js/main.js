@@ -44,6 +44,16 @@ if (savedLang && savedLang !== 'lv') {
   setLang(savedLang);
 }
 
+// Preselect journey via [data-preselect] on in-page CTAs
+document.querySelectorAll('a[data-preselect]').forEach(link => {
+  link.addEventListener('click', () => {
+    const select = document.getElementById('journey');
+    if (!select) return;
+    const opt = select.querySelector(`option[data-key="${link.dataset.preselect}"]`);
+    if (opt) select.value = opt.value;
+  });
+});
+
 // Form submission via Resend API
 const form = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');

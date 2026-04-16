@@ -733,6 +733,41 @@ a:hover { color: var(--c-accent-hover); }
 
 .contact-alt a { font-weight: 400; }
 
+/* === Contact icons (TG, WhatsApp) === */
+.contact-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: .7rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  color: var(--c-text-muted);
+  font-size: .88rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--c-white);
+  transition: border-color .2s, color .2s, background .2s, transform .2s;
+}
+
+.contact-icon:hover {
+  border-color: var(--c-accent);
+  color: var(--c-text);
+  background: var(--c-bg);
+  transform: translateY(-1px);
+}
+
+.contact-icon svg { flex-shrink: 0; display: block; }
+.contact-icon--tg svg { color: #229ED9; }
+.contact-icon--wa svg { color: #25D366; }
+
 /* === Footer === */
 .footer {
   padding: 2.5rem 0;
