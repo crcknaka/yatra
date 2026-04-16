@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yatra.lv/sitemap.xml

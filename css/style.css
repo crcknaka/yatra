@@ -266,7 +266,7 @@ a:hover { color: var(--c-accent-hover); }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/tea.jpeg') center/cover no-repeat;
+  background: url('../assets/tea.webp') center/cover no-repeat;
   opacity: .35;
   filter: saturate(.85);
 }
