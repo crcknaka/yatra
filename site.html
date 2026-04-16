@@ -15,7 +15,9 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo">Yatra</a>
+      <a href="#hero" class="nav__logo" aria-label="Yatra">
+        <img src="assets/logo.png" alt="Yatra — Retreats &amp; Pilgrimages" class="nav__logo-img">
+      </a>
       <button class="nav__toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -25,6 +27,7 @@
         <li><a href="#experience" data-i18n="nav.experience">Pieredze</a></li>
         <li><a href="#leaders" data-i18n="nav.leaders">Vadītāji</a></li>
         <li><a href="#clinic" data-i18n="nav.clinic">Klīnika</a></li>
+        <li><a href="#rooms" data-i18n="nav.rooms">Dzīvošana</a></li>
         <li><a href="#prices" data-i18n="nav.prices">Cenas</a></li>
         <li><a href="#contact" class="nav__cta" data-i18n="nav.cta">Pieteikties</a></li>
       </ul>
@@ -41,8 +44,10 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
+    <div class="hero__bg"></div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
+      <img src="assets/logo.png" alt="Yatra" class="hero__logo">
       <p class="hero__label" data-i18n="hero.label">Pančakarma</p>
       <h1 class="hero__title" data-i18n-html="hero.title">Pilna ājurvēdas<br>pieredze</h1>
       <p class="hero__dates" data-i18n="hero.dates">14. decembris – 28. decembris 2026</p>
@@ -62,9 +67,16 @@
 
   <!-- Ayurveda -->
   <section class="section section--alt" id="ayurveda">
-    <div class="container container--narrow">
-      <h2 class="section__title" data-i18n="ayurveda.title">Ājurvēda — dzīves līdzsvara māksla</h2>
-      <p class="section__intro" data-i18n="ayurveda.text">Ājurvēda ir sena holistiska zinātne no Indijas, kas cilvēku uztver kā vienotu ķermeņa, prāta un gara sistēmu. Tās mērķis nav tikai novērst simptomus, bet atjaunot dabisko līdzsvaru, stiprināt dzīvības enerģiju un aktivizēt organisma pašdziedināšanās spējas, dzīvojot harmonijā ar dabas ritmiem.</p>
+    <div class="container">
+      <div class="feature-row">
+        <div class="feature-row__text">
+          <h2 class="section__title section__title--left" data-i18n="ayurveda.title">Ājurvēda — dzīves līdzsvara māksla</h2>
+          <p data-i18n="ayurveda.text">Ājurvēda ir sena holistiska zinātne no Indijas, kas cilvēku uztver kā vienotu ķermeņa, prāta un gara sistēmu. Tās mērķis nav tikai novērst simptomus, bet atjaunot dabisko līdzsvaru, stiprināt dzīvības enerģiju un aktivizēt organisma pašdziedināšanās spējas, dzīvojot harmonijā ar dabas ritmiem.</p>
+        </div>
+        <div class="feature-row__image">
+          <img src="assets/tea.jpeg" alt="Ājurvēdas terapija">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -160,16 +172,61 @@
 
   <!-- Clinic -->
   <section class="section" id="clinic">
-    <div class="container container--narrow">
+    <div class="container">
       <h2 class="section__title" data-i18n="clinic.title">Ājurvēdas klīnika</h2>
       <h3 class="section__subtitle" data-i18n="clinic.subtitle">Dodamies uz vienu no pasaules labākajām ājurvēdas klīnikām</h3>
-      <p class="section__intro" data-i18n="clinic.text1">Mēs dzīvosim klīnikā, kas ir atzīta kā viena no labākajām pasaulē — vietu, kuru rekomendē daudzi, kas tur jau ir bijuši, un kuri regulāri atgriežas, lai uzlabotu savu veselību pēc noslogotas darba ikdienas. Šī ir iespēja uzturēties īstā atveseļošanās un dziedināšanas oāzē.</p>
-      <p class="section__intro" data-i18n="clinic.text2">Dzīvosim komfortablos divvietīgos numuros ar visām ērtībām, ļaujoties pilnīgai atpūtai un ķermeņa atjaunošanai.</p>
+      <div class="feature-row feature-row--reverse">
+        <div class="feature-row__image">
+          <img src="assets/about.jpeg" alt="Ājurvēdas ārstu konsultācija">
+        </div>
+        <div class="feature-row__text">
+          <p data-i18n="clinic.text1">Mēs dzīvosim klīnikā, kas ir atzīta kā viena no labākajām pasaulē — vietu, kuru rekomendē daudzi, kas tur jau ir bijuši, un kuri regulāri atgriežas, lai uzlabotu savu veselību pēc noslogotas darba ikdienas. Šī ir iespēja uzturēties īstā atveseļošanās un dziedināšanas oāzē.</p>
+          <p data-i18n="clinic.text2">Dzīvosim komfortablos divvietīgos numuros ar visām ērtībām, ļaujoties pilnīgai atpūtai un ķermeņa atjaunošanai.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms / Accommodations -->
+  <section class="section section--alt" id="rooms">
+    <div class="container">
+      <h2 class="section__title" data-i18n="rooms.title">Dzīvošana</h2>
+      <p class="section__intro" data-i18n="rooms.intro">Klīnikas teritorijā pieejami trīs dažādi dzīvošanas veidi. Izvēlies sev piemērotāko — no autentiskām Keralas koteedžām līdz plašiem Deluxe numuriem.</p>
+      <div class="rooms">
+        <article class="room">
+          <div class="room__image">
+            <img src="assets/Deluxe%20Room/Deluxe-new.jpg" alt="Deluxe numurs" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3 data-i18n="rooms.deluxe.title">Deluxe numurs</h3>
+            <p data-i18n="rooms.deluxe.text">Plašs un gaišs numurs jaunajā klīnikas korpusā ar skatu uz baseinu un dārzu. Augstāks komforta līmenis, moderns interjers un visas nepieciešamās ērtības tiem, kas vēlas ekskluzīvāku pieredzi.</p>
+          </div>
+        </article>
+        <article class="room">
+          <div class="room__image">
+            <img src="assets/Kerala%20Cottages/cottage.jpg" alt="Keralas koteedžas" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3 data-i18n="rooms.cottage.title">Keralas koteedžas</h3>
+            <p data-i18n="rooms.cottage.text">Tradicionālas Keralas stila koteedžas palmu ieskautā dārzā. Autentiska atmosfēra un tieša saikne ar dabu — lieliska izvēle tiem, kas meklē mieru un īpašu kolorītu.</p>
+          </div>
+        </article>
+        <article class="room">
+          <div class="room__image">
+            <img src="assets/Standard%20Room/std%20room.jpg" alt="Standarta numurs" loading="lazy">
+          </div>
+          <div class="room__body">
+            <h3 data-i18n="rooms.standard.title">Standarta numurs</h3>
+            <p data-i18n="rooms.standard.text">Komfortabls divvietīgs numurs ar visām nepieciešamajām ērtībām. Vienkāršs, mājīgs un praktisks — iekļauts programmas pamatcenā.</p>
+          </div>
+        </article>
+      </div>
+      <p class="rooms__note" data-i18n="rooms.note">Istabu pieejamība un gala cena tiek precizēta pēc pieteikuma iesniegšanas. Sazinies ar mums, lai izvēlētos sev piemērotāko variantu.</p>
     </div>
   </section>
 
   <!-- Prices -->
-  <section class="section section--alt" id="prices">
+  <section class="section" id="prices">
     <div class="container">
       <h2 class="section__title" data-i18n="prices.title">Reģistrācijas detaļas</h2>
 

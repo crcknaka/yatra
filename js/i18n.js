@@ -6,6 +6,7 @@ const translations = {
     "nav.experience": "Pieredze",
     "nav.leaders": "Vadītāji",
     "nav.clinic": "Klīnika",
+    "nav.rooms": "Dzīvošana",
     "nav.prices": "Cenas",
     "nav.cta": "Pieteikties",
 
@@ -72,6 +73,17 @@ const translations = {
     "clinic.subtitle": "Dodamies uz vienu no pasaules labākajām ājurvēdas klīnikām",
     "clinic.text1": "Mēs dzīvosim klīnikā, kas ir atzīta kā viena no labākajām pasaulē — vietu, kuru rekomendē daudzi, kas tur jau ir bijuši, un kuri regulāri atgriežas, lai uzlabotu savu veselību pēc noslogotas darba ikdienas. Šī ir iespēja uzturēties īstā atveseļošanās un dziedināšanas oāzē.",
     "clinic.text2": "Dzīvosim komfortablos divvietīgos numuros ar visām ērtībām, ļaujoties pilnīgai atpūtai un ķermeņa atjaunošanai.",
+
+    // Rooms
+    "rooms.title": "Dzīvošana",
+    "rooms.intro": "Klīnikas teritorijā pieejami trīs dažādi dzīvošanas veidi. Izvēlies sev piemērotāko — no autentiskām Keralas koteedžām līdz plašiem Deluxe numuriem.",
+    "rooms.deluxe.title": "Deluxe numurs",
+    "rooms.deluxe.text": "Plašs un gaišs numurs jaunajā klīnikas korpusā ar skatu uz baseinu un dārzu. Augstāks komforta līmenis, moderns interjers un visas nepieciešamās ērtības tiem, kas vēlas ekskluzīvāku pieredzi.",
+    "rooms.cottage.title": "Keralas koteedžas",
+    "rooms.cottage.text": "Tradicionālas Keralas stila koteedžas palmu ieskautā dārzā. Autentiska atmosfēra un tieša saikne ar dabu — lieliska izvēle tiem, kas meklē mieru un īpašu kolorītu.",
+    "rooms.standard.title": "Standarta numurs",
+    "rooms.standard.text": "Komfortabls divvietīgs numurs ar visām nepieciešamajām ērtībām. Vienkāršs, mājīgs un praktisks — iekļauts programmas pamatcenā.",
+    "rooms.note": "Istabu pieejamība un gala cena tiek precizēta pēc pieteikuma iesniegšanas. Sazinies ar mums, lai izvēlētos sev piemērotāko variantu.",
 
     // Prices
     "prices.title": "Reģistrācijas detaļas",
