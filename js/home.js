@@ -41,6 +41,15 @@ if (slider) {
     });
   });
 
+  document.getElementById('heroPrev')?.addEventListener('click', () => {
+    goTo(current - 1);
+    start();
+  });
+  document.getElementById('heroNext')?.addEventListener('click', () => {
+    goTo(current + 1);
+    start();
+  });
+
   slider.addEventListener('mouseenter', stop);
   slider.addEventListener('mouseleave', start);
 
