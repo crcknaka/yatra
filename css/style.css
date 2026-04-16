@@ -370,18 +370,30 @@ a:hover { color: var(--c-accent-hover); }
 }
 
 .hero-dot {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-dot::before {
+  content: '';
+  display: block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   border: 1.5px solid rgba(255,255,255,.6);
   background: transparent;
-  cursor: pointer;
-  padding: 0;
   transition: background .3s, border-color .3s, transform .2s;
 }
 
-.hero-dot:hover { border-color: var(--c-gold); }
-.hero-dot--active {
+.hero-dot:hover::before { border-color: var(--c-gold); }
+.hero-dot--active::before {
   background: var(--c-gold);
   border-color: var(--c-gold);
   transform: scale(1.15);
@@ -854,7 +866,7 @@ a:hover { color: var(--c-accent-hover); }
 .footer {
   padding: 2.5rem 0;
   background: var(--c-text);
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.75);
   font-size: .82rem;
   text-align: center;
 }
@@ -863,11 +875,12 @@ a:hover { color: var(--c-accent-hover); }
   max-width: 700px;
   margin: 0 auto .75rem;
   line-height: 1.7;
+  color: rgba(255,255,255,.7);
 }
 
 .footer__copy {
   margin-top: 1rem;
-  color: rgba(255,255,255,.3);
+  color: rgba(255,255,255,.65);
 }
 
 /* === Feature Row (image + text) === */
