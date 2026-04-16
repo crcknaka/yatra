@@ -704,6 +704,12 @@ a:hover { color: var(--c-accent-hover); }
 
 .form textarea { resize: vertical; }
 
+.form__captcha {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
 .form__success {
   text-align: center;
   padding: 2rem;

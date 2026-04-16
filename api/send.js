@@ -3,16 +3,44 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'toms.liepins@gmail.com';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'Yatra.lv <onboarding@resend.dev>';
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
+
+async function verifyTurnstile(token, ip) {
+  if (!TURNSTILE_SECRET) {
+    // If no secret configured, skip verification so dev works without it.
+    return { success: true, skipped: true };
+  }
+  if (!token) return { success: false, reason: 'missing_token' };
+
+  const body = new URLSearchParams({ secret: TURNSTILE_SECRET, response: token });
+  if (ip) body.append('remoteip', ip);
+
+  const resp = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    body,
+  });
+  const data = await resp.json();
+  return { success: data.success === true, reason: data['error-codes']?.join(',') };
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, phone, dates, journey, participants, message } = req.body;
+  const {
+    name, email, phone, dates, journey, participants, message,
+    'cf-turnstile-response': turnstileToken,
+  } = req.body;
 
   if (!name || !email) {
     return res.status(400).json({ error: 'Trūkst obligāto lauku' });
+  }
+
+  const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket?.remoteAddress;
+  const verify = await verifyTurnstile(turnstileToken, ip);
+  if (!verify.success) {
+    return res.status(403).json({ error: 'Neizdevās verificēt captcha', reason: verify.reason });
   }
 
   const journeyLabel = journey || 'Pančakarma';
