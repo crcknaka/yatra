@@ -141,7 +141,7 @@ const translations = {
     "footer.copy": "© 2026 Yatra.lv. Visas tiesības aizsargātas.",
 
     // Meta
-    "meta.title": "Yatra.lv — Ājurvēdas retrīts Keralā",
+    "meta.title": "Yatra.lv — Ājurvēdas retrīts",
     "meta.description": "Pančakarma retrīts Keralā. Pilna ājurvēdas pieredze ar Swami Vishwasharadaananda un Narayana Ananda. 14.12.–28.12.2026.",
   },
 
