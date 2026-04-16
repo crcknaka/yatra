@@ -302,6 +302,7 @@ a:hover { color: var(--c-accent-hover); }
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: clamp(7rem, 14vh, 9rem) clamp(4rem, 8vw, 5rem) clamp(5rem, 10vh, 6rem);
   opacity: 0;
   transform: translateY(16px);
   pointer-events: none;
