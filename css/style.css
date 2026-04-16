@@ -114,7 +114,7 @@ a:hover { color: var(--c-accent-hover); }
 }
 
 .nav__logo-img {
-  height: 72px;
+  height: 88px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
