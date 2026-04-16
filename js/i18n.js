@@ -1,8 +1,10 @@
 const translations = {
   lv: {
     // Nav
-    "nav.about": "Par retrītu",
+    "nav.home": "Sākums",
     "nav.pancakarma": "Pančakarma",
+    "nav.pilgrimage": "Svētceļojums",
+    "nav.about": "Par retrītu",
     "nav.experience": "Pieredze",
     "nav.leaders": "Vadītāji",
     "nav.clinic": "Klīnika",

@@ -48,7 +48,7 @@ if (savedLang && savedLang !== 'lv') {
 const form = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
-form.addEventListener('submit', async (e) => {
+if (form) form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const btn = form.querySelector('button[type="submit"]');
