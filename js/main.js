@@ -12,6 +12,13 @@ navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('nav__links--open');
 });
 
+const navClose = document.getElementById('navClose');
+if (navClose) {
+  navClose.addEventListener('click', () => {
+    navLinks.classList.remove('nav__links--open');
+  });
+}
+
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('nav__links--open');
