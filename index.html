@@ -41,9 +41,8 @@
       </button>
       <ul class="nav__links" id="navLinks">
         <li><a href="/" class="nav__active" data-i18n="nav.home">Sākums</a></li>
-        <li><a href="/pancakarma" data-i18n="nav.pancakarma">Pančakarma</a></li>
-        <li><a href="/pilgrimage" data-i18n="nav.pilgrimage">Svētceļojums</a></li>
-        <li><a href="#contact" class="nav__cta" data-i18n="nav.cta">Pieteikties</a></li>
+        <li><a href="#par-mums" data-i18n="nav.parmums">Par mums</a></li>
+        <li><a href="#pieteikties" class="nav__cta" data-i18n="nav.cta">Pieteikties</a></li>
       </ul>
       <div class="lang" id="langSwitcher">
         <button class="lang__current" id="langToggle">LV</button>
@@ -96,64 +95,17 @@
     <div class="container container--narrow">
       <h2 class="section__title" data-i18n="home.intro.title">Ceļš uz sevi caur Indiju</h2>
       <p class="section__intro" data-i18n="home.intro.text">Yatra apvieno ājurvēdas dziedināšanu un garīgās svētceļojumu tradīcijas — lai Tu varētu atjaunot ķermeni, nomierināt prātu un piedzīvot dziļāku saikni ar sevi. Katrs ceļojums ir sagatavots kopā ar pieredzējušiem garīgajiem skolotājiem un autentiskiem partneriem Indijā.</p>
-    </div>
-  </section>
-
-  <!-- Journeys -->
-  <section class="section section--alt" id="journeys">
-    <div class="container">
-      <h2 class="section__title" data-i18n="home.journeys.title">Mūsu ceļojumi</h2>
-      <p class="section__intro" data-i18n="home.journeys.intro">Izvēlies sev piemērotāko pieredzi. Katrs ceļojums ir rūpīgi izveidots — ar savu programmu, vadītājiem un dziļumu.</p>
-
-      <div class="journeys">
-        <a href="/pancakarma" class="journey-card">
-          <div class="journey-card__image">
-            <img src="assets/tea.jpeg" alt="Pančakarma Keralā" loading="lazy">
-          </div>
-          <div class="journey-card__body">
-            <span class="journey-card__label" data-i18n="home.j.pan.label">Ājurvēdas retrīts</span>
-            <h3 class="journey-card__title" data-i18n="home.j.pan.title">Pančakarma — Pilna ājurvēdas pieredze</h3>
-            <p class="journey-card__dates" data-i18n="home.j.pan.dates">14.12. – 28.12.2026. · Kerala</p>
-            <p class="journey-card__desc" data-i18n="home.j.pan.desc">14 dienu individuāli pielāgota Pančakarmas programma vienā no labākajām ājurvēdas klīnikām pasaulē. Dziļa ķermeņa attīrīšana, satsangi, svētvietu apmeklējumi un atpūta pie Arābijas jūras.</p>
-            <ul class="journey-card__bullets">
-              <li data-i18n="home.j.pan.b1">Individuāla Pančakarmas programma</li>
-              <li data-i18n="home.j.pan.b2">3,5 – 5 stundas terapijas dienā</li>
-              <li data-i18n="home.j.pan.b3">Satsangi un garīgās prakses</li>
-              <li data-i18n="home.j.pan.b4">Ājurvēdisks uzturs</li>
-            </ul>
-            <span class="journey-card__price" data-i18n-html="home.j.pan.price">No <strong>2495 €</strong></span>
-            <span class="journey-card__cta" data-i18n="home.j.pan.cta">Uzzināt vairāk →</span>
-          </div>
-        </a>
-
-        <a href="/pilgrimage" class="journey-card">
-          <div class="journey-card__image">
-            <img src="assets/Kerala%20Cottages/cottage.jpg" alt="Svētceļojums uz Dienvidindiju" loading="lazy">
-          </div>
-          <div class="journey-card__body">
-            <span class="journey-card__label" data-i18n="home.j.pil.label">Svētceļojums</span>
-            <h3 class="journey-card__title" data-i18n="home.j.pil.title">Svētceļojums uz Dienvidindiju</h3>
-            <p class="journey-card__dates" data-i18n="home.j.pil.dates">05.01. – 15.01.2027. · Kerala &amp; Tamilnāda</p>
-            <p class="journey-card__desc" data-i18n="home.j.pil.desc">11 dienu ceļojums pa Keralas un Tamilnādas svētvietām. Divja Desam tempļi, Rameshwaram, Kanjakumari, Meenakshi templis, Kathakali izrāde un laivu brauciens Kovalamā.</p>
-            <ul class="journey-card__bullets">
-              <li data-i18n="home.j.pil.b1">15+ Divja Desam tempļu</li>
-              <li data-i18n="home.j.pil.b2">Padmanabhaswamy un Guruvayur</li>
-              <li data-i18n="home.j.pil.b3">Rameshwaram un Kanjakumari</li>
-              <li data-i18n="home.j.pil.b4">Kathakali izrāde un laivu brauciens</li>
-            </ul>
-            <span class="journey-card__price" data-i18n-html="home.j.pil.price">No <strong>1950 €</strong></span>
-            <span class="journey-card__cta" data-i18n="home.j.pil.cta">Uzzināt vairāk →</span>
-          </div>
-        </a>
+      <div class="cta-strip__actions" style="margin-top:2rem;justify-content:center;display:flex;">
+        <a href="/celojumi" class="btn btn--primary" data-i18n="home.intro.cta">Apskatīt visus ceļojumus →</a>
       </div>
     </div>
   </section>
 
-  <!-- Leaders -->
-  <section class="section" id="leaders">
+  <!-- Par mums -->
+  <section class="section section--alt" id="par-mums">
     <div class="container">
-      <h2 class="section__title" data-i18n="leaders.title">Grupas vadītāji</h2>
-      <p class="section__intro" data-i18n="leaders.intro">Grupu vada pieredzējuši garīgie skolotāji, kuri daudzu gadu garumā ir padziļināti iepazinuši Indijas garīgās tradīcijas un ājurvēdas prakses.</p>
+      <h2 class="section__title" data-i18n="parmums.title">Par mums</h2>
+      <p class="section__intro" data-i18n="parmums.intro">Grupas vada pieredzējuši garīgie skolotāji, kuri daudzu gadu garumā ir padziļināti iepazinuši Indijas garīgās tradīcijas un ājurvēdas prakses.</p>
       <div class="leaders">
         <div class="leader">
           <h3 data-i18n="leaders.swami.name">Swami Vishwasharadaananda</h3>
@@ -164,11 +116,12 @@
           <p data-i18n="leaders.narayana.text">Atma Krija Jogas un Bhakti Marga mācību pasniedzējs, kā arī garīgo rituālu vadītājs. Viņš palīdz cilvēkiem atrast iekšējo mieru, skaidrību un dziļāku saikni ar sevi.</p>
         </div>
       </div>
+      <p class="leaders__note" data-i18n="parmums.note">Daudzu gadu laikā viņi ir izzinājuši un izvērtējuši dažādas pieredzes visā Indijā, meklējot patiesi autentiskus un kvalitatīvus ceļojumus. Katrs Yatra piedāvājums ir viņu personiskās izvēles un ieteikuma vērts.</p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section section--alt" id="contact">
+  <!-- Pieteikties -->
+  <section class="section" id="pieteikties">
     <div class="container container--narrow">
       <h2 class="section__title" data-i18n="contact.title">Pieteikties</h2>
       <p class="section__intro" data-i18n="home.contact.intro">Piesakies laicīgi — vietu skaits ir ierobežots. Aizpildi formu un mēs ar Tevi sazināsimies.</p>
