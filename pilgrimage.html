@@ -31,7 +31,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav nav--static" id="nav">
     <div class="nav__inner">
       <a href="/" class="nav__logo" aria-label="Yatra">
         <img src="assets/logo.png" alt="Yatra — Retreats &amp; Pilgrimages" class="nav__logo-img">
@@ -41,7 +41,7 @@
       </button>
       <ul class="nav__links" id="navLinks">
         <li><a href="/" data-i18n="nav.home">Sākums</a></li>
-        <li><a href="/celojumi" data-i18n="nav.celojumi">Ceļojumi</a></li>
+        <li><a href="/celojumi" class="nav__active" data-i18n="nav.celojumi">Ceļojumi</a></li>
         <li><a href="/#par-mums" data-i18n="nav.parmums">Par mums</a></li>
         <li><a href="/?journey=pilgrimage#pieteikties" class="nav__cta" data-i18n="nav.cta">Pieteikties</a></li>
       </ul>
@@ -56,18 +56,22 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero__bg"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <img src="assets/logo.png" alt="Yatra" class="hero__logo">
-      <p class="hero__label" data-i18n="pil.hero.label">Svētceļojums</p>
-      <h1 class="hero__title" data-i18n-html="pil.hero.title">Dienvidindija</h1>
-      <p class="hero__dates" data-i18n="pil.hero.dates">05.01.2027. — 15.01.2027.</p>
-      <p class="hero__open" data-i18n="hero.open">Pieteikšanās atvērta</p>
-      <p class="hero__price" data-i18n-html="pil.hero.price">No <strong>1950 €</strong></p>
-      <a href="/?journey=pilgrimage#pieteikties" class="btn btn--primary" data-i18n="hero.cta">Pieteikties</a>
+  <!-- Page header -->
+  <section class="page-header page-header--journey" id="top">
+    <div class="container container--narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/" data-i18n="nav.home">Sākums</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="/celojumi" data-i18n="nav.celojumi">Ceļojumi</a>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current" data-i18n="pil.crumb">Svētceļojums uz Dienvidindiju</span>
+      </nav>
+      <p class="page-header__label" data-i18n="pil.hero.label">Svētceļojums</p>
+      <h1 class="page-header__title" data-i18n-html="pil.hero.title">Dienvidindija</h1>
+      <p class="page-header__meta" data-i18n="pil.header.meta">05.01. – 15.01.2027. · Kerala &amp; Tamilnāda · No 1950 €</p>
+      <div class="page-header__actions">
+        <a href="/?journey=pilgrimage#pieteikties" class="btn btn--primary" data-i18n="hero.cta">Pieteikties</a>
+      </div>
     </div>
   </section>
 
