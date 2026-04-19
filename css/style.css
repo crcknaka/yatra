@@ -656,40 +656,15 @@ a:hover { color: var(--c-accent-hover); }
 .readmore {
   max-width: 780px;
   margin: 2.5rem auto 0;
+  text-align: center;
 }
 
 .readmore__toggle {
   list-style: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  padding: .75rem 1.5rem;
-  margin: 0 auto;
-  font-family: var(--font-body);
-  font-size: .95rem;
-  font-weight: 500;
-  letter-spacing: .02em;
-  color: var(--c-accent);
-  border: 1px solid var(--c-accent);
-  border-radius: 999px;
-  background: transparent;
-  transition: background .2s, color .2s;
-  text-align: center;
 }
 
 .readmore__toggle::-webkit-details-marker { display: none; }
 .readmore__toggle::marker { content: ''; }
-
-.readmore__toggle:hover {
-  background: var(--c-accent);
-  color: #fff;
-}
-
-.readmore > summary {
-  display: flex;
-  justify-content: center;
-}
 
 .readmore__less { display: none; }
 .readmore[open] .readmore__more { display: none; }
@@ -700,6 +675,7 @@ a:hover { color: var(--c-accent-hover); }
   color: var(--c-text-muted);
   line-height: 1.85;
   font-size: 1rem;
+  text-align: left;
 }
 
 .readmore__content p { margin-bottom: 1.1rem; }
