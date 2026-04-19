@@ -652,6 +652,71 @@ a:hover { color: var(--c-accent-hover); }
   line-height: 1.8;
 }
 
+/* === Read more (Par mums) === */
+.readmore {
+  max-width: 780px;
+  margin: 2.5rem auto 0;
+}
+
+.readmore__toggle {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .75rem 1.5rem;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--c-accent);
+  border: 1px solid var(--c-accent);
+  border-radius: 999px;
+  background: transparent;
+  transition: background .2s, color .2s;
+  text-align: center;
+}
+
+.readmore__toggle::-webkit-details-marker { display: none; }
+.readmore__toggle::marker { content: ''; }
+
+.readmore__toggle:hover {
+  background: var(--c-accent);
+  color: #fff;
+}
+
+.readmore > summary {
+  display: flex;
+  justify-content: center;
+}
+
+.readmore__less { display: none; }
+.readmore[open] .readmore__more { display: none; }
+.readmore[open] .readmore__less { display: inline; }
+
+.readmore__content {
+  margin-top: 2rem;
+  color: var(--c-text-muted);
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.readmore__content p { margin-bottom: 1.1rem; }
+
+.readmore__heading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--c-accent);
+  margin: 2rem 0 1rem;
+}
+
+.readmore__cta {
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
 /* === Pricing === */
 .pricing {
   display: grid;
@@ -986,6 +1051,24 @@ a:hover { color: var(--c-accent-hover); }
   color: var(--c-text-muted);
   font-size: .95rem;
   line-height: 1.75;
+}
+
+.room__prices {
+  list-style: none;
+  padding: .85rem 0 0;
+  margin: 1rem 0 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.room__prices li {
+  font-size: .9rem;
+  color: var(--c-text-muted);
+  padding: .2rem 0;
+}
+
+.room__prices strong {
+  color: var(--c-accent);
+  font-weight: 600;
 }
 
 .rooms__note {
