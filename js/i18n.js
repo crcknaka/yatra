@@ -63,12 +63,8 @@ const translations = {
     "journey.item2": "<strong>Satsangi</strong> — sarunas par dvēseli, Dievu un dzīves jēgu",
     "journey.item3": "<strong>Atpūta dabā</strong> — klusums, miers un dziļa atjaunošanās dabas vidē",
 
-    // Par mums (home) — read more
+    // Par mums (home)
     "parmums.title": "Par mums",
-    "parmums.intro": "Grupas vada pieredzējuši garīgie skolotāji, kuri daudzu gadu garumā ir padziļināti iepazinuši Indijas garīgās tradīcijas un ājurvēdas prakses.",
-    "parmums.note": "Daudzu gadu laikā viņi ir izzinājuši un izvērtējuši dažādas pieredzes visā Indijā, meklējot patiesi autentiskus un kvalitatīvus ceļojumus. Katrs Yatra piedāvājums ir viņu personiskās izvēles un ieteikuma vērts.",
-    "parmums.more.open": "Lasīt vairāk",
-    "parmums.more.close": "Aizvērt",
     "parmums.more.p1": "Yatra ir rūpīgi veidota pieredze tiem, kuri meklē vairāk nekā ceļojumu — tiem, kuri meklē dziļumu, autentiskumu un iekšēju transformāciju.",
     "parmums.more.p2": "Mēs esam garīgo meklētāju komanda ar izsmalcinātu izpratni par svētceļojumu būtību. Apvienojot ilggadēju pieredzi, rūpīgi atlasītus galamērķus un dziļas zināšanas par senajām tradīcijām, mēs radām unikālus ceļojumus, kas pārsniedz ierasto tūrisma pieredzi.",
     "parmums.more.p3": "Mūsu piedāvātie svētceļojumi un retrīti ved uz autentiskām, enerģētiski spēcīgām vietām — tādām, kuras nav atrodamas ceļvežos. Tās ir vietas, kur laiks apstājas, kur atklājas senas zināšanas un kur iespējams piedzīvot patiesu saikni ar sevi.",
@@ -80,7 +76,6 @@ const translations = {
     "parmums.more.p7": "Yatra ir radīta tiem, kuri izvēlas kvalitāti, dziļumu un patiesumu.",
     "parmums.more.p8": "Tiem, kuri nevēlas būt vienkārši ceļotāji, bet gan apzināti piedzīvotāji.",
     "parmums.more.p9": "Mūsu programmas ir individuāli izstrādātas garīgajiem meklētājiem, kuri novērtē autentiskumu, personīgu pieeju un transformējošu pieredzi. Mēs radām vidi, kurā iespējams pilnībā atvērties, atjaunoties un doties tālāk savā ceļā ar skaidrību un iekšēju spēku.",
-    "parmums.more.cta": "Sazinies ar mums →",
 
     // Leaders
     "leaders.title": "Grupas vadītāji",
