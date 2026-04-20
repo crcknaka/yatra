@@ -1,0 +1,62 @@
+{#
+  contactIntroKey: i18n key for the intro paragraph ("home.contact.intro" | "pan.contact.intro" | "pil.contact.intro")
+  journeyMode: "all" | "pancakarma" | "pilgrimage"
+#}
+<form class="form" id="contactForm">
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+  <div class="form__group">
+    {% if journeyMode == "pilgrimage" %}
+      <label data-i18n="form.journey">Ceļojums *</label>
+      <div class="form__journey-locked" data-i18n="{{ journeys.pilgrimage.i18nKey }}">{{ journeys.pilgrimage.value }}</div>
+      <input type="hidden" name="journey" id="journey" value="{{ journeys.pilgrimage.value }}">
+    {% else %}
+      <label for="journey" data-i18n="form.journey">Ceļojums *</label>
+      <select id="journey" name="journey" required>
+        {% if journeyMode == "all" %}
+          <option value="" data-i18n="form.journey.placeholder">Izvēlies ceļojumu</option>
+        {% endif %}
+        {% if journeyMode == "all" or journeyMode == "pancakarma" %}
+          <option data-key="pancakarma-14" value="{{ journeys['pancakarma-14'].value }}"{% if journeyMode == "pancakarma" %} selected{% endif %} data-i18n="{{ journeys['pancakarma-14'].i18nKey }}">{{ journeys['pancakarma-14'].value }}</option>
+          <option data-key="pancakarma-21" value="{{ journeys['pancakarma-21'].value }}" data-i18n="{{ journeys['pancakarma-21'].i18nKey }}">{{ journeys['pancakarma-21'].value }}</option>
+        {% endif %}
+        {% if journeyMode == "all" %}
+          <option data-key="pilgrimage" value="{{ journeys.pilgrimage.value }}" data-i18n="{{ journeys.pilgrimage.i18nKey }}">{{ journeys.pilgrimage.value }}</option>
+        {% endif %}
+      </select>
+    {% endif %}
+  </div>
+
+  <div class="form__group">
+    <label for="name" data-i18n="form.name">Vārds, uzvārds *</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form__row">
+    <div class="form__group">
+      <label for="email" data-i18n="form.email">E-pasts *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form__group">
+      <label for="phone" data-i18n="form.phone">Tālrunis</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+  </div>
+  <div class="form__group">
+    <label for="participants" data-i18n="form.participants">Dalībnieku skaits</label>
+    <input type="number" id="participants" name="participants" min="1" max="20" value="1">
+  </div>
+  <div class="form__group">
+    <label for="message" data-i18n="form.message">Jautājumi vai komentāri</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+  </div>
+
+  <div class="form__group form__captcha">
+    <div class="cf-turnstile" data-sitekey="{{ site.turnstileSiteKey }}" data-theme="light"></div>
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full" data-i18n="form.submit">Nosūtīt pieteikumu</button>
+</form>
+
+<div class="form__success hidden" id="formSuccess">
+  <p data-i18n="form.success">Paldies par pieteikumu! Mēs ar Jums sazināsimies tuvākajā laikā.</p>
+</div>

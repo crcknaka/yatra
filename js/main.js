@@ -55,7 +55,7 @@ document.addEventListener('click', () => {
   langMenu.classList.remove('lang__menu--open');
 });
 
-langMenu.querySelectorAll('.lang__option').forEach(btn => {
+document.querySelectorAll('.lang__option').forEach(btn => {
   btn.addEventListener('click', () => {
     setLang(btn.dataset.lang);
     langMenu.classList.remove('lang__menu--open');

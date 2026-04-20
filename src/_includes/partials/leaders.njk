@@ -1,0 +1,23 @@
+{#
+  swamiTextKey: i18n key for swami's description (page-specific length)
+  noteKey: optional — i18n key for the bottom note paragraph
+#}
+<section class="section section--alt" id="leaders">
+  <div class="container">
+    <h2 class="section__title" data-i18n="leaders.title">Grupas vadītāji</h2>
+    <p class="section__intro" data-i18n="leaders.intro">Grupu vada pieredzējuši garīgie skolotāji, kuri daudzu gadu garumā ir padziļināti iepazinuši Indijas garīgās tradīcijas un ājurvēdas prakses.</p>
+    <div class="leaders">
+      <div class="leader">
+        <h3 data-i18n="leaders.swami.name">Swami Vishwasharadaananda</h3>
+        <p data-i18n="{{ swamiTextKey or 'leaders.swami.text' }}">Studējis Dienvidāzijas valodas, kultūru, vēsturi un ekonomiku. Viņa dziļā interese par Dievu aizveda viņu pie realizēta Meistara Paramahamsas Šri Swami Vishwanandas, kuru viņš šobrīd pārstāv Latvijā un citviet pasaulē. Swami dzīve ir veltīta kalpošanai cilvēkiem — mācot garīguma ceļu caur lūgšanām, Atma Krija jogu, rituāliem un dzīvi apzinātā kopienā.</p>
+      </div>
+      <div class="leader">
+        <h3 data-i18n="leaders.narayana.name">Narayana Ananda</h3>
+        <p data-i18n="leaders.narayana.text">Atma Krija Jogas un Bhakti Marga mācību pasniedzējs, kā arī garīgo rituālu vadītājs. Viņš palīdz cilvēkiem atrast iekšējo mieru, skaidrību un dziļāku saikni ar sevi.</p>
+      </div>
+    </div>
+    {% if noteKey %}
+    <p class="leaders__note" data-i18n="{{ noteKey }}">Daudzu gadu laikā viņi ir izzinājuši un izvērtējuši dažādas Pančakarmas iespējas visā Indijā, meklējot patiesi autentisku un kvalitatīvu pieredzi. Šis retrīts un izvēlētā klīnika ir viņu skatījumā viena no labākajām — vieta, kur apvienojas profesionāla pieeja, autentiskas zināšanas un patiesa dziedināšana.</p>
+    {% endif %}
+  </div>
+</section>

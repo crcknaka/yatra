@@ -1,0 +1,9 @@
+{# footerNotes: array of { i18nKey, html } — journey-specific disclaimers #}
+<footer class="footer">
+  <div class="container">
+    {%- for note in footerNotes %}
+    <p class="footer__note" data-i18n{% if note.html %}-html{% endif %}="{{ note.i18nKey }}">{{ note.text | safe }}</p>
+    {%- endfor %}
+    <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Yatra.lv. Visas tiesības aizsargātas.</p>
+  </div>
+</footer>

@@ -19,6 +19,16 @@
 
 html { scroll-behavior: smooth; }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   font-family: var(--font-body);
   font-weight: 300;
@@ -237,6 +247,9 @@ a:hover { color: var(--c-accent-hover); }
 
 .lang__option:hover { background: var(--c-bg-alt); color: var(--c-text); }
 .lang__option--active { font-weight: 600; color: var(--c-accent); }
+
+/* Mobile-only inline lang row inside the slide-in menu panel */
+.nav__lang-row { display: none; }
 
 .nav__backdrop {
   position: fixed;
@@ -959,7 +972,7 @@ a:hover { color: var(--c-accent-hover); }
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform .25s, box-shadow .25s;
+  transition: transform .4s cubic-bezier(.2, .8, .25, 1), box-shadow .4s cubic-bezier(.2, .8, .25, 1);
   text-align: left;
   font: inherit;
   color: inherit;
@@ -1061,7 +1074,7 @@ a:hover { color: var(--c-accent-hover); }
   display: flex;
   flex-direction: column;
   color: inherit;
-  transition: transform .3s, box-shadow .3s;
+  transition: transform .45s cubic-bezier(.2, .8, .25, 1), box-shadow .45s cubic-bezier(.2, .8, .25, 1);
 }
 
 .journey-card:hover {
@@ -1484,8 +1497,40 @@ a:hover { color: var(--c-accent-hover); }
   .nav--scrolled .nav__logo-img { height: 52px; }
   .nav__close-item { display: block; }
 
-  .lang { order: 1; margin-left: 0; margin-right: .5rem; }
+  .lang { display: none; }
   .nav__toggle { order: 2; }
+
+  .nav__lang-row {
+    display: flex;
+    gap: .75rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .nav__lang-row .lang__option {
+    flex: 1;
+    width: auto;
+    padding: .6rem .9rem;
+    text-align: center;
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    transition: border-color .2s, color .2s, background .2s;
+  }
+
+  .nav__lang-row .lang__option:not(.lang__option--active):hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
+  }
+
+  .nav__lang-row .lang__option--active {
+    background: var(--c-accent);
+    color: var(--c-white);
+    border-color: var(--c-accent);
+  }
 
   .modal { padding: 1rem .6rem; }
   .modal__content { padding: 2rem 1.3rem 1.5rem; }

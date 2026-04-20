@@ -12,3 +12,9 @@ YATRA-dienvidindija.txt
 node_modules/
 
 .vercel
+
+# Eleventy build output
+_site/
+
+# Local smoke-test screenshots
+scripts/screens/

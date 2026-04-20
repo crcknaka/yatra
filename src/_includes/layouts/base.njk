@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ site.defaultLang }}" data-lang="{{ site.defaultLang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="yatra.lv">
+  <meta property="og:url" content="{{ site.url }}{{ (page.url | replace('.html', '') | replace('/index', '/')) }}">
+  <meta property="og:title" content="{{ ogTitle or title }}">
+  <meta property="og:description" content="{{ ogDescription or description }}">
+  <meta property="og:image" content="{{ ogImage or site.ogImage }}">
+  <meta property="og:image:width" content="{{ site.ogImageWidth }}">
+  <meta property="og:image:height" content="{{ site.ogImageHeight }}">
+  <meta property="og:locale" content="lv_LV">
+
+  {% if twitterTitle or twitterDescription %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ twitterTitle or ogTitle or title }}">
+  <meta name="twitter:description" content="{{ twitterDescription or ogDescription or description }}">
+  <meta name="twitter:image" content="{{ ogImage or site.ogImage }}">
+  {% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  {% if hasContactForm %}
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  {% endif %}
+
+  {% if jsonLd %}
+  <script type="application/ld+json">
+{{ jsonLd | dump(2) | safe }}
+  </script>
+  {% endif %}
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+
+  {% include "partials/nav.njk" %}
+
+  {{ content | safe }}
+
+  {% include "partials/footer.njk" %}
+
+  {% if hasRoomModal %}
+  <div class="modal" id="roomModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="document">
+      <button type="button" class="modal__close" data-close aria-label="Aizvērt">&times;</button>
+      <div class="modal__content">
+        <h3 class="modal__title" id="modalTitle"></h3>
+        <p class="modal__desc" id="modalDesc"></p>
+        <div class="modal__gallery" id="modalGallery"></div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <script src="/js/i18n.js"></script>
+  {%- for script in pageScripts %}
+  <script src="/js/{{ script }}"></script>
+  {%- endfor %}
+  <script src="/js/main.js"></script>
+  <script type="module" src="/js/motion.js"></script>
+</body>
+</html>

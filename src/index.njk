@@ -1,0 +1,86 @@
+---
+layout: base.njk
+permalink: /index.html
+title: "Yatra.lv — Ājurvēdas retrīts"
+description: "Garīgās prakses, svētceļojumi, pančakarma."
+ogTitle: "Yatra.lv — Ājurvēdas retrīts"
+ogDescription: "Garīgās prakses, svētceļojumi, pančakarma."
+twitterTitle: "Yatra.lv — Ājurvēdas retrīts"
+twitterDescription: "Garīgās prakses, svētceļojumi, pančakarma."
+activeLink: home
+navVariant: home
+bodyClass: page-home
+hasContactForm: true
+pageScripts: [home.js]
+contactIntroKey: home.contact.intro
+journeyMode: all
+phones: [{ tel: "+37129221141", label: "+371 29 221 141" }, { tel: "+37129753355", label: "+371 29 753 355" }]
+whatsapps: [{ tel: "37129221141", label: "+371 29 221 141" }, { tel: "37129753355", label: "+371 29 753 355" }]
+jsonLd:
+  "@context": "https://schema.org"
+  "@type": TravelAgency
+  name: Yatra.lv
+  url: https://yatra.lv
+  logo: https://yatra.lv/assets/logo.png
+  image: https://yatra.lv/assets/og-image.jpg
+  description: "Ājurvēdas retrīti un svētceļojumi uz Indiju — kopā ar Swami Vishwasharadaananda un Narayana Ananda."
+  telephone: "+371 29221141"
+  address:
+    "@type": PostalAddress
+    addressCountry: LV
+  sameAs: []
+---
+
+<section class="hero hero--slider" id="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide hero-slide--active" data-slide="0">
+      <div class="hero__content">
+        <p class="hero__label" data-i18n="home.slide1.label">Ājurvēdas retrīts</p>
+        <h1 class="hero__title" data-i18n-html="home.slide1.title">Pančakarma<br>Keralā</h1>
+        <p class="hero__dates" data-i18n="home.slide1.dates">14.12. – 28.12.2026.</p>
+        <p class="hero__price" data-i18n-html="home.slide1.price">No <strong>2495 €</strong></p>
+        <a href="/pancakarma" class="btn btn--primary" data-i18n="home.slide1.cta">Uzzināt vairāk</a>
+      </div>
+    </div>
+
+    <div class="hero-slide" data-slide="1">
+      <div class="hero__content">
+        <p class="hero__label" data-i18n="home.slide2.label">Svētceļojums</p>
+        <h1 class="hero__title" data-i18n-html="home.slide2.title">Dienvidindija</h1>
+        <p class="hero__dates" data-i18n="home.slide2.dates">05.01. – 16.01.2027.</p>
+        <p class="hero__price" data-i18n-html="home.slide2.price">No <strong>1950 €</strong></p>
+        <a href="/pilgrimage" class="btn btn--primary" data-i18n="home.slide2.cta">Uzzināt vairāk</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Iepriekšējais slaids" type="button">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Nākamais slaids" type="button">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot hero-dot--active" data-slide="0" aria-label="1. ceļojums"></button>
+    <button class="hero-dot" data-slide="1" aria-label="2. ceļojums"></button>
+  </div>
+</section>
+
+<section class="section" id="intro">
+  <div class="container container--narrow">
+    <h2 class="section__title" data-i18n="home.intro.title">Ceļš uz sevi caur Indiju</h2>
+    <p class="section__intro" data-i18n="home.intro.text">Yatra apvieno ājurvēdas dziedināšanu un garīgās svētceļojumu tradīcijas — lai Tu varētu atjaunot ķermeni, nomierināt prātu un piedzīvot dziļāku saikni ar sevi. Katrs ceļojums ir sagatavots kopā ar pieredzējušiem garīgajiem skolotājiem un autentiskiem partneriem Indijā.</p>
+    <div class="cta-strip__actions" style="margin-top:2rem;justify-content:center;display:flex;">
+      <a href="/celojumi" class="btn btn--primary" data-i18n="home.intro.cta">Apskatīt visus ceļojumus →</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/par-mums.njk" %}
+
+{% set sectionClass = "" %}
+{% include "partials/pieteikties.njk" %}

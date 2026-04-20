@@ -1,0 +1,17 @@
+{#
+  sectionClass: css modifier, usually "section--alt" on journey pages, "" on home
+  contactIntroKey: which i18n key for intro paragraph
+  journeyMode: "all" | "pancakarma" | "pilgrimage"
+  phones: array from site.contacts.phones (or a subset)
+  whatsapps: array from site.contacts.whatsapps (or a subset)
+#}
+<section class="section{% if sectionClass %} {{ sectionClass }}{% endif %}" id="pieteikties">
+  <div class="container container--narrow">
+    <h2 class="section__title" data-i18n="contact.title">Pieteikties</h2>
+    <p class="section__intro" data-i18n="{{ contactIntroKey }}">Piesakies laicīgi — vietu skaits ir ierobežots. Aizpildi formu un mēs ar Tevi sazināsimies.</p>
+
+    {% include "partials/contact-form.njk" %}
+
+    {% include "partials/contact-info.njk" %}
+  </div>
+</section>
