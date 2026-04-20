@@ -17,11 +17,13 @@ document.body.appendChild(navBackdrop);
 function openMenu() {
   navLinks.classList.add('nav__links--open');
   navBackdrop.classList.add('nav__backdrop--open');
+  navToggle.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
 }
 function closeMenu() {
   navLinks.classList.remove('nav__links--open');
   navBackdrop.classList.remove('nav__backdrop--open');
+  navToggle.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 
@@ -46,19 +48,22 @@ document.addEventListener('keydown', (e) => {
 const langToggleBtn = document.getElementById('langToggle');
 const langMenu = document.getElementById('langMenu');
 
+function setLangMenu(open) {
+  langMenu.classList.toggle('lang__menu--open', open);
+  langToggleBtn.setAttribute('aria-expanded', String(open));
+}
+
 langToggleBtn.addEventListener('click', (e) => {
   e.stopPropagation();
-  langMenu.classList.toggle('lang__menu--open');
+  setLangMenu(!langMenu.classList.contains('lang__menu--open'));
 });
 
-document.addEventListener('click', () => {
-  langMenu.classList.remove('lang__menu--open');
-});
+document.addEventListener('click', () => setLangMenu(false));
 
 document.querySelectorAll('.lang__option').forEach(btn => {
   btn.addEventListener('click', () => {
     setLang(btn.dataset.lang);
-    langMenu.classList.remove('lang__menu--open');
+    setLangMenu(false);
   });
 });
 
@@ -68,14 +73,21 @@ if (savedLang && savedLang !== 'lv') {
   setLang(savedLang);
 }
 
-// Preselect journey via [data-preselect] on in-page CTAs
+// Preselect journey in contact form. Supports two sources:
+//   1) URL ?journey=<key>  (e.g. /#pieteikties?journey=pilgrimage)
+//   2) [data-preselect] anchors elsewhere on the page
+function preselectJourney(key) {
+  const select = document.getElementById('journey');
+  if (!select) return;
+  const opt = select.querySelector(`option[data-key="${key}"]`);
+  if (opt) select.value = opt.value;
+}
+
+const urlJourney = new URLSearchParams(window.location.search).get('journey');
+if (urlJourney) preselectJourney(urlJourney);
+
 document.querySelectorAll('a[data-preselect]').forEach(link => {
-  link.addEventListener('click', () => {
-    const select = document.getElementById('journey');
-    if (!select) return;
-    const opt = select.querySelector(`option[data-key="${link.dataset.preselect}"]`);
-    if (opt) select.value = opt.value;
-  });
+  link.addEventListener('click', () => preselectJourney(link.dataset.preselect));
 });
 
 // Form submission via Resend API

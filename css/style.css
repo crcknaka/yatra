@@ -321,7 +321,10 @@ a:hover { color: var(--c-accent-hover); }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/tea.webp') center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   opacity: .65;
   filter: saturate(.95);
 }
@@ -551,6 +554,12 @@ a:hover { color: var(--c-accent-hover); }
 }
 
 .section__intro p + p { margin-top: 1rem; }
+
+.intro__cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
 
 /* === Features grid === */
 .features {
@@ -1521,9 +1530,11 @@ a:hover { color: var(--c-accent-hover); }
     transition: border-color .2s, color .2s, background .2s;
   }
 
-  .nav__lang-row .lang__option:not(.lang__option--active):hover {
-    border-color: var(--c-accent);
-    color: var(--c-accent);
+  @media (hover: hover) {
+    .nav__lang-row .lang__option:not(.lang__option--active):hover {
+      border-color: var(--c-accent);
+      color: var(--c-accent);
+    }
   }
 
   .nav__lang-row .lang__option--active {

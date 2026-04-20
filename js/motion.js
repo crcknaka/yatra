@@ -1,4 +1,4 @@
-import { animate, inView, stagger } from "https://esm.sh/motion@12.23.12";
+import { animate, inView, stagger } from "motion";
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (reduced) {

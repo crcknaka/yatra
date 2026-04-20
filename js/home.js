@@ -1,14 +1,3 @@
-// Preselect journey in contact form from ?journey=<key>
-(function preselectJourney() {
-  const params = new URLSearchParams(window.location.search);
-  const key = params.get('journey');
-  if (!key) return;
-  const select = document.getElementById('journey');
-  if (!select) return;
-  const opt = select.querySelector(`option[data-key="${key}"]`);
-  if (opt) select.value = opt.value;
-})();
-
 const slider = document.getElementById('heroSlider');
 if (slider) {
   const slides = slider.querySelectorAll('.hero-slide');
@@ -19,10 +8,14 @@ if (slider) {
 
   function goTo(idx) {
     slides[current].classList.remove('hero-slide--active');
+    slides[current].setAttribute('aria-hidden', 'true');
     dots[current]?.classList.remove('hero-dot--active');
+    dots[current]?.setAttribute('aria-selected', 'false');
     current = (idx + slides.length) % slides.length;
     slides[current].classList.add('hero-slide--active');
+    slides[current].setAttribute('aria-hidden', 'false');
     dots[current]?.classList.add('hero-dot--active');
+    dots[current]?.setAttribute('aria-selected', 'true');
   }
 
   function start() {

@@ -4,27 +4,27 @@
     <a href="/" class="nav__logo" aria-label="Yatra">
       <img src="/assets/logo.png" alt="Yatra — Retreats &amp; Pilgrimages" class="nav__logo-img">
     </a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu">
+    <button type="button" class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
       <li class="nav__close-item"><button type="button" class="nav__close" id="navClose" aria-label="Aizvērt">&times;</button></li>
-      <li><a href="/"{% if activeLink == "home" %} class="nav__active"{% endif %} data-i18n="nav.home">Sākums</a></li>
-      <li><a href="/celojumi"{% if activeLink == "celojumi" %} class="nav__active"{% endif %} data-i18n="nav.celojumi">Ceļojumi</a></li>
+      <li><a href="/"{% if activeLink == "home" %} class="nav__active" aria-current="page"{% endif %} data-i18n="nav.home">Sākums</a></li>
+      <li><a href="/celojumi"{% if activeLink == "celojumi" %} class="nav__active" aria-current="page"{% endif %} data-i18n="nav.celojumi">Ceļojumi</a></li>
       <li><a href="{% if activeLink == 'home' %}#par-mums{% else %}/#par-mums{% endif %}" data-i18n="nav.parmums">Par mums</a></li>
       <li><a href="{% if hasContactForm %}#pieteikties{% else %}/#pieteikties{% endif %}" class="nav__cta" data-i18n="nav.cta">Pieteikties</a></li>
       <li class="nav__lang-row" aria-label="Valoda">
-        <button class="lang__option lang__option--active" data-lang="lv">LV</button>
-        <button class="lang__option" data-lang="ru">RU</button>
-        <button class="lang__option" data-lang="en">EN</button>
+        <button type="button" class="lang__option lang__option--active" data-lang="lv">LV</button>
+        <button type="button" class="lang__option" data-lang="ru">RU</button>
+        <button type="button" class="lang__option" data-lang="en">EN</button>
       </li>
     </ul>
     <div class="lang" id="langSwitcher">
-      <button class="lang__current" id="langToggle">LV</button>
+      <button type="button" class="lang__current" id="langToggle" aria-haspopup="true" aria-expanded="false">LV</button>
       <ul class="lang__menu" id="langMenu">
-        <li><button class="lang__option lang__option--active" data-lang="lv">LV</button></li>
-        <li><button class="lang__option" data-lang="ru">RU</button></li>
-        <li><button class="lang__option" data-lang="en">EN</button></li>
+        <li><button type="button" class="lang__option lang__option--active" data-lang="lv">LV</button></li>
+        <li><button type="button" class="lang__option" data-lang="ru">RU</button></li>
+        <li><button type="button" class="lang__option" data-lang="en">EN</button></li>
       </ul>
     </div>
   </div>

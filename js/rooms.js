@@ -74,12 +74,6 @@ function closeRoom() {
 
 document.querySelectorAll('.room[data-room]').forEach(btn => {
   btn.addEventListener('click', () => openRoom(btn.dataset.room));
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      openRoom(btn.dataset.room);
-    }
-  });
 });
 
 modal.addEventListener('click', (e) => {

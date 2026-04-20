@@ -86,7 +86,9 @@ jsonLd:
         <p data-i18n="ayurveda.text">Ājurvēda ir sena holistiska zinātne no Indijas, kas cilvēku uztver kā vienotu ķermeņa, prāta un gara sistēmu. Tās mērķis nav tikai novērst simptomus, bet atjaunot dabisko līdzsvaru, stiprināt dzīvības enerģiju un aktivizēt organisma pašdziedināšanās spējas, dzīvojot harmonijā ar dabas ritmiem.</p>
       </div>
       <div class="feature-row__image">
-        <img src="/assets/tea.webp" alt="Ājurvēdas terapija">
+        <img src="/assets/tea.webp" alt="Ājurvēdas terapija"
+             srcset="/assets/tea-480.webp 480w, /assets/tea-800.webp 800w, /assets/tea-1200.webp 1200w, /assets/tea.webp 1600w"
+             sizes="(max-width: 768px) 100vw, 50vw" loading="lazy">
       </div>
     </div>
   </div>
@@ -170,7 +172,9 @@ jsonLd:
     <h3 class="section__subtitle" data-i18n="clinic.subtitle">Dodamies uz vienu no pasaules labākajām ājurvēdas klīnikām</h3>
     <div class="feature-row feature-row--reverse">
       <div class="feature-row__image">
-        <img src="/assets/about.webp" alt="Ājurvēdas ārstu konsultācija">
+        <img src="/assets/about.webp" alt="Ājurvēdas ārstu konsultācija"
+             srcset="/assets/about-480.webp 480w, /assets/about-800.webp 800w, /assets/about-1200.webp 1200w, /assets/about.webp 1600w"
+             sizes="(max-width: 768px) 100vw, 50vw" loading="lazy">
       </div>
       <div class="feature-row__text">
         <p data-i18n="clinic.text1">Mēs dzīvosim klīnikā, kas ir atzīta kā viena no labākajām pasaulē — vietu, kuru rekomendē daudzi, kas tur jau ir bijuši, un kuri regulāri atgriežas, lai uzlabotu savu veselību pēc noslogotas darba ikdienas. Šī ir iespēja uzturēties īstā atveseļošanās un dziedināšanas oāzē.</p>
@@ -185,9 +189,11 @@ jsonLd:
     <h2 class="section__title" data-i18n="rooms.title">Dzīvošana</h2>
     <p class="section__intro" data-i18n="rooms.intro">Klīnikas teritorijā pieejami trīs dažādi dzīvošanas veidi. Izvēlies sev piemērotāko — no autentiskām Keralas koteedžām līdz plašiem Deluxe numuriem.</p>
     <div class="rooms">
-      <article class="room" data-room="standard" role="button" tabindex="0" aria-label="Apskatīt Standarta numura galeriju">
+      <button type="button" class="room" data-room="standard" aria-label="Apskatīt Standarta numura galeriju">
         <div class="room__image">
-          <img src="/assets/Standard%20Room/std%20room.webp" alt="Standarta numurs" loading="lazy">
+          <img src="/assets/Standard%20Room/std%20room.webp" alt="Standarta numurs" loading="lazy"
+               srcset="/assets/Standard%20Room/std%20room-480.webp 480w, /assets/Standard%20Room/std%20room-800.webp 800w, /assets/Standard%20Room/std%20room.webp 960w"
+               sizes="(max-width: 768px) 100vw, 33vw">
         </div>
         <div class="room__body">
           <h3 data-i18n="rooms.standard.title">Standarta numurs</h3>
@@ -197,10 +203,12 @@ jsonLd:
           </ul>
           <span class="room__more" data-i18n="rooms.more">Apskatīt fotogrāfijas →</span>
         </div>
-      </article>
-      <article class="room" data-room="deluxe" role="button" tabindex="0" aria-label="Apskatīt Deluxe numura galeriju">
+      </button>
+      <button type="button" class="room" data-room="deluxe" aria-label="Apskatīt Deluxe numura galeriju">
         <div class="room__image">
-          <img src="/assets/Deluxe%20Room/Deluxe-new.webp" alt="Deluxe numurs" loading="lazy">
+          <img src="/assets/Deluxe%20Room/Deluxe-new.webp" alt="Deluxe numurs" loading="lazy"
+               srcset="/assets/Deluxe%20Room/Deluxe-new-480.webp 480w, /assets/Deluxe%20Room/Deluxe-new-800.webp 800w, /assets/Deluxe%20Room/Deluxe-new-1200.webp 1200w, /assets/Deluxe%20Room/Deluxe-new.webp 1600w"
+               sizes="(max-width: 768px) 100vw, 33vw">
         </div>
         <div class="room__body">
           <h3 data-i18n="rooms.deluxe.title">Deluxe numurs</h3>
@@ -211,10 +219,12 @@ jsonLd:
           </ul>
           <span class="room__more" data-i18n="rooms.more">Apskatīt fotogrāfijas →</span>
         </div>
-      </article>
-      <article class="room" data-room="cottage" role="button" tabindex="0" aria-label="Apskatīt Keralas koteedžu galeriju">
+      </button>
+      <button type="button" class="room" data-room="cottage" aria-label="Apskatīt Keralas koteedžu galeriju">
         <div class="room__image">
-          <img src="/assets/Kerala%20Cottages/cottage.webp" alt="Keralas koteedžas" loading="lazy">
+          <img src="/assets/Kerala%20Cottages/cottage.webp" alt="Keralas koteedžas" loading="lazy"
+               srcset="/assets/Kerala%20Cottages/cottage-480.webp 480w, /assets/Kerala%20Cottages/cottage-800.webp 800w, /assets/Kerala%20Cottages/cottage-1200.webp 1200w, /assets/Kerala%20Cottages/cottage.webp 1600w"
+               sizes="(max-width: 768px) 100vw, 33vw">
         </div>
         <div class="room__body">
           <h3 data-i18n="rooms.cottage.title">Keralas koteedžas</h3>
@@ -225,7 +235,7 @@ jsonLd:
           </ul>
           <span class="room__more" data-i18n="rooms.more">Apskatīt fotogrāfijas →</span>
         </div>
-      </article>
+      </button>
     </div>
     <p class="rooms__note" data-i18n="rooms.note">Istabu pieejamība un gala cena tiek precizēta pēc pieteikuma iesniegšanas. Sazinies ar mums, lai izvēlētos sev piemērotāko variantu.</p>
   </div>
