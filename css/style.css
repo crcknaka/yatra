@@ -1543,6 +1543,8 @@ a:hover { color: var(--c-accent-hover); }
     border-color: var(--c-accent);
   }
 
+  .page-header { padding-top: 10.5rem; }
+
   .modal { padding: 1rem .6rem; }
   .modal__content { padding: 2rem 1.3rem 1.5rem; }
   .modal__gallery { grid-template-columns: 1fr; }
