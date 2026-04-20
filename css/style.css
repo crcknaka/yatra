@@ -818,6 +818,16 @@ a:hover { color: var(--c-accent-hover); }
 
 .form textarea { resize: vertical; }
 
+.form__journey-locked {
+  padding: .75rem 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  background: var(--c-bg-alt, #f7f5f0);
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--c-text);
+}
+
 .form__captcha {
   display: flex;
   justify-content: center;

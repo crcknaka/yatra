@@ -344,13 +344,9 @@
         <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
         <div class="form__group">
-          <label for="journey" data-i18n="form.journey">Ceļojums *</label>
-          <select id="journey" name="journey" required>
-            <option value="" data-i18n="form.journey.placeholder">Izvēlies ceļojumu</option>
-            <option data-key="pancakarma-14" value="Pančakarma Keralā — 14.12.–28.12.2026. (14 dienas, 2495 €)" data-i18n="form.journey.opt1">Pančakarma Keralā — 14.12.–28.12.2026. (14 dienas, 2495 €)</option>
-            <option data-key="pancakarma-21" value="Pančakarma Keralā — 14.12.2026.–03.01.2027. (21 diena, 3695 €)" data-i18n="form.journey.opt2">Pančakarma Keralā — 14.12.2026.–03.01.2027. (21 diena, 3695 €)</option>
-            <option data-key="pilgrimage" value="Svētceļojums uz Dienvidindiju — 05.–16.01.2027. (11 dienas, 1950 €)" selected data-i18n="form.journey.opt3">Svētceļojums uz Dienvidindiju — 05.–16.01.2027. (11 dienas, 1950 €)</option>
-          </select>
+          <label data-i18n="form.journey">Ceļojums *</label>
+          <div class="form__journey-locked" data-i18n="form.journey.opt3">Svētceļojums uz Dienvidindiju — 05.–16.01.2027. (11 dienas, 1950 €)</div>
+          <input type="hidden" name="journey" id="journey" value="Svētceļojums uz Dienvidindiju — 05.–16.01.2027. (11 dienas, 1950 €)">
         </div>
 
         <div class="form__group">
