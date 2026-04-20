@@ -67,12 +67,6 @@ document.querySelectorAll('.lang__option').forEach(btn => {
   });
 });
 
-// Restore saved language
-const savedLang = localStorage.getItem('yatra-lang');
-if (savedLang && savedLang !== 'lv') {
-  setLang(savedLang);
-}
-
 // Preselect journey in contact form. Supports two sources:
 //   1) URL ?journey=<key>  (e.g. /#pieteikties?journey=pilgrimage)
 //   2) [data-preselect] anchors elsewhere on the page

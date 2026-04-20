@@ -19,7 +19,14 @@ if (reduced) {
     ".feature-row",
   ].join(", ");
 
+  const vh = window.innerHeight;
   document.querySelectorAll(revealSelector).forEach((el) => {
+    // Skip elements that are already in viewport on first paint — they're
+    // above/at the fold and should render immediately, not animate in.
+    const rect = el.getBoundingClientRect();
+    const alreadyVisible = rect.top < vh * 0.9 && rect.bottom > 0;
+    if (alreadyVisible) return;
+
     // Set initial state (hidden + offset) before observing, so nothing flashes.
     el.style.opacity = "0";
     el.style.transform = "translateY(28px)";

@@ -21,6 +21,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("locales");
   eleventyConfig.addPassthroughCopy("robots.txt");
   // sitemap.xml is now generated from src/sitemap.njk
 
