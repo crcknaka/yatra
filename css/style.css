@@ -685,6 +685,19 @@ a:hover { color: var(--c-accent-hover); }
   font-weight: 600;
 }
 
+.power-places__figure {
+  margin: 1.2rem 0 0;
+  max-width: 520px;
+}
+
+.power-places__figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(44,36,32,.12);
+}
+
 /* === Leaders === */
 .leaders {
   display: grid;
