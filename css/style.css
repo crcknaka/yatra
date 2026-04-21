@@ -646,6 +646,45 @@ a:hover { color: var(--c-accent-hover); }
   background: var(--c-gold);
 }
 
+/* === Power places === */
+.power-places > p {
+  color: var(--c-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.power-places ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.power-places li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--c-text-muted);
+  line-height: 1.8;
+}
+
+.power-places li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .75em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+
+.power-places li strong {
+  color: var(--c-accent);
+  font-weight: 600;
+}
+
 /* === Leaders === */
 .leaders {
   display: grid;
