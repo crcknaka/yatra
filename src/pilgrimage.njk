@@ -97,7 +97,7 @@ jsonLd:
       </div>
       <div class="feature">
         <h3 data-i18n="pil.h.rames.title">Rameshwaram</h3>
-        <p data-i18n="pil.h.rames.text">Rituāli 22 svētajos ūdeņos, Ramanathaswamy templis — viens no 12 svētākajiem Džotirlingamiem — un agrā rīta pelde okeānā.</p>
+        <p data-i18n="pil.h.rames.text">Viens no četriem īpašajiem tempļiem Indijā — Chardam. Šo Šivas templi katru dienu apmeklē tūkstošiem svētceļotāju. Rituāli 22 svētajos ūdeņos šo vietu padara ļoti īpašu. Ramanathaswamy templis — viens no 12 svētākajiem Džotirlingamiem — un agrā rīta pelde okeānā.</p>
       </div>
       <div class="feature">
         <h3 data-i18n="pil.h.viveka.title">Vivekanandas memoriāls</h3>
@@ -117,6 +117,15 @@ jsonLd:
       </div>
     </div>
   </div>
+
+  {% set galleryFolder = "pilgrimage" %}
+  {% set galleryClass = "gallery--mt-lg" %}
+  {% set galleryItems = [
+    { stem: "01", alt: "Templis ar gopuram virs upes" },
+    { stem: "06", alt: "Tempļu skats" },
+    { stem: "10", alt: "Svētvieta Dienvidindijā" }
+  ] %}
+  {% include "partials/gallery.njk" %}
 </section>
 
 <section class="section" id="itinerary">
@@ -216,10 +225,30 @@ jsonLd:
       </li>
     </ol>
   </div>
+
+  {% set galleryFolder = "pilgrimage" %}
+  {% set galleryClass = "gallery--vertical gallery--mt-lg" %}
+  {% set galleryItems = [
+    { stem: "v01", alt: "Iespaids no svētceļojuma", vertical: true },
+    { stem: "v02", alt: "Mirklis pie tempļa", vertical: true },
+    { stem: "v03", alt: "Indijas garīgums", vertical: true }
+  ] %}
+  {% include "partials/gallery.njk" %}
 </section>
 
 {% set swamiTextKey = "pil.leaders.swami.text" %}
 {% include "partials/leaders.njk" %}
+
+<section class="section">
+  {% set galleryFolder = "pilgrimage" %}
+  {% set galleryClass = "" %}
+  {% set galleryItems = [
+    { stem: "07", alt: "Svētie ugunis tempļa rituālā" },
+    { stem: "12", alt: "Kathakali izrāde" },
+    { stem: "04", alt: "Maršruta mirklis" }
+  ] %}
+  {% include "partials/gallery.njk" %}
+</section>
 
 <section class="section" id="prices">
   <div class="container">
@@ -244,6 +273,9 @@ jsonLd:
           <li data-i18n="pil.inc.3">Brokastis un vakariņas</li>
           <li data-i18n="pil.inc.4">Pilns atbalsts pirms ceļojuma un tā laikā</li>
           <li data-i18n="pil.inc.5">Palīdzība vīzas noformēšanā, apdrošināšanā un aviobiļešu iegādē</li>
+          <li data-i18n="pil.inc.6">Kopējas ikdienas meditācijas</li>
+          <li data-i18n="pil.inc.7">Sarunas — satsangi par garīgām patiesības tēmām</li>
+          <li data-i18n="pil.inc.8">Bhajanu, kirtanu un mantru koncerts</li>
         </ul>
       </div>
       <div class="price-details__col">

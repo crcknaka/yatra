@@ -85,6 +85,14 @@ jsonLd:
       <a href="/celojumi" class="btn btn--primary" data-i18n="home.intro.cta">Apskatīt visus ceļojumus →</a>
     </div>
   </div>
+
+  {% set galleryClass = "gallery--mt-lg" %}
+  {% set galleryItems = [
+    { stem: "03", folder: "pancakarma", alt: "Keralas tējas plantācijas Munnarā" },
+    { stem: "02", folder: "pilgrimage", alt: "Saulriets virs Dienvidindijas palmām" },
+    { stem: "02", folder: "pancakarma", alt: "Ājurvēdas terapija" }
+  ] %}
+  {% include "partials/gallery.njk" %}
 </section>
 
 {% include "partials/par-mums.njk" %}

@@ -1,0 +1,31 @@
+{#
+  Photo gallery (3 in a row on desktop, responsive on mobile).
+
+  Required vars before include:
+    galleryItems: array of { stem, alt, vertical?, folder? }
+                  stem = file name without extension/size suffix (e.g. "01", "v02")
+                  folder = override per-item, otherwise uses galleryFolder
+    galleryFolder: default folder under /assets/gallery/ (e.g. "pancakarma")
+    galleryClass: optional extra class (e.g. "gallery--vertical gallery--mt-lg")
+#}
+<div class="container">
+  <div class="gallery {{ galleryClass }}">
+  {%- for item in galleryItems %}
+    {%- set folder = item.folder or galleryFolder -%}
+    {%- set base = "/assets/gallery/" + folder + "/" + item.stem -%}
+    {%- if item.vertical %}
+    <figure class="gallery__item">
+      <img src="{{ base }}.webp" alt="{{ item.alt }}" loading="lazy" decoding="async"
+           srcset="{{ base }}-480.webp 480w, {{ base }}-720.webp 720w, {{ base }}.webp 1080w"
+           sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw">
+    </figure>
+    {%- else %}
+    <figure class="gallery__item">
+      <img src="{{ base }}-800.webp" alt="{{ item.alt }}" loading="lazy" decoding="async"
+           srcset="{{ base }}-480.webp 480w, {{ base }}-800.webp 800w, {{ base }}-1200.webp 1200w, {{ base }}.webp 1600w"
+           sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw">
+    </figure>
+    {%- endif %}
+  {%- endfor %}
+  </div>
+</div>

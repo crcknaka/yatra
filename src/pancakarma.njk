@@ -143,7 +143,17 @@ jsonLd:
         <p data-i18n="exp.sea.text">Meditācija un laiks pie jūras palīdz atjaunot iekšējo līdzsvaru, paplašināt sajūtas un piedzīvot dziļu mieru.</p>
       </div>
     </div>
+
   </div>
+
+  {% set galleryFolder = "pancakarma" %}
+  {% set galleryClass = "gallery--mt-lg" %}
+  {% set galleryItems = [
+    { stem: "01", alt: "Ājurvēdiskās augu un ziedu sastāvdaļas" },
+    { stem: "04", alt: "Ārstniecisko augu sagatavošana" },
+    { stem: "06", alt: "Augu maisījumu pagatavošana" }
+  ] %}
+  {% include "partials/gallery.njk" %}
 </section>
 
 <section class="section" id="journey">
@@ -160,6 +170,15 @@ jsonLd:
       </ul>
     </div>
   </div>
+
+  {% set galleryFolder = "pancakarma" %}
+  {% set galleryClass = "gallery--vertical gallery--mt-lg" %}
+  {% set galleryItems = [
+    { stem: "v01", alt: "Atveseļošanās process", vertical: true },
+    { stem: "v02", alt: "Mierīga klātbūtne", vertical: true },
+    { stem: "v05", alt: "Iekšējā telpa", vertical: true }
+  ] %}
+  {% include "partials/gallery.njk" %}
 </section>
 
 <section class="section section--alt" id="power-places">
@@ -296,6 +315,9 @@ jsonLd:
           <li data-i18n="prices.included.7">Izbraucieni uz svētvietām un tempļiem</li>
           <li data-i18n="prices.included.8">Pilns atbalsts pirms ceļojuma un tā laikā</li>
           <li data-i18n="prices.included.9">Palīdzība vīzas noformēšanā, apdrošināšanā un aviobiļešu iegādē</li>
+          <li data-i18n="prices.included.10">Kopējas ikdienas meditācijas</li>
+          <li data-i18n="prices.included.11">Sarunas — satsangi par garīgām patiesības tēmām</li>
+          <li data-i18n="prices.included.12">Bhajanu, kirtanu un mantru koncerts</li>
         </ul>
       </div>
       <div class="price-details__col">

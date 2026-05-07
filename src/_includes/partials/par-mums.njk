@@ -10,7 +10,19 @@
       <h3 class="parmums__heading" data-i18n="parmums.more.h1">Transformācija kā pieredze</h3>
       <p data-i18n="parmums.more.p5">Mēs ticam, ka patiesa greznība slēpjas nevis ārējos atribūtos, bet iespējā apstāties, sajust un transformēties.</p>
       <p data-i18n="parmums.more.p6">Sakrālās vietas, autentiskas zināšanas un vadīta pieredze kopā rada telpu, kurā iespējama dziļa iekšējā pārvērtība. Šī pieredze dabiski atspoguļojas visās dzīves jomās — attiecībās, darbā, pašsajūtā un dzīves kvalitātē kopumā.</p>
+    </div>
+  </div>
 
+  {% set galleryClass = "gallery--vertical gallery--mt-lg" %}
+  {% set galleryItems = [
+    { stem: "v04", folder: "pancakarma", alt: "Ājurvēdiskās eļļas un augi", vertical: true },
+    { stem: "v04", folder: "pilgrimage", alt: "Šivas statuja", vertical: true },
+    { stem: "v06", folder: "pancakarma", alt: "Pinda sveda terapija", vertical: true }
+  ] %}
+  {% include "partials/gallery.njk" %}
+
+  <div class="container">
+    <div class="parmums__content parmums__content--continued">
       <h3 class="parmums__heading" data-i18n="parmums.more.h2">Kam tas ir domāts</h3>
       <p data-i18n="parmums.more.p7">Yatra ir radīta tiem, kuri izvēlas kvalitāti, dziļumu un patiesumu.</p>
       <p data-i18n="parmums.more.p8">Tiem, kuri nevēlas būt vienkārši ceļotāji, bet gan apzināti piedzīvotāji.</p>
