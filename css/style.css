@@ -719,9 +719,35 @@ a:hover { color: var(--c-accent-hover); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  position: relative;
+  margin-top: 2rem;
 }
-.two-col p { color: var(--c-text-muted); font-size: 1.02rem; }
+
+.two-col > div {
+  position: relative;
+  padding: .25rem 0 .25rem 1.5rem;
+  border-left: 2px solid var(--c-gold);
+}
+
+.two-col > div::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  box-shadow: 0 0 0 3px var(--c-bg);
+}
+
+.two-col p { color: var(--c-text-muted); font-size: 1.02rem; line-height: 1.85; }
 .two-col p + p { margin-top: 1rem; }
+.two-col strong { color: var(--c-accent); }
+
+@media (max-width: 768px) {
+  .two-col > div { padding-left: 1.2rem; }
+}
 
 /* === Journey === */
 .journey {
@@ -931,10 +957,24 @@ a:hover { color: var(--c-accent-hover); }
 
 .parmums__heading {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--c-accent);
-  margin: 2rem 0 1rem;
+  margin: 2.5rem 0 1.2rem;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.parmums__heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 1.4em;
+  background: linear-gradient(180deg, var(--c-gold), var(--c-accent));
+  border-radius: 2px;
 }
 
 .parmums__content--continued { margin-top: 3rem; }
@@ -1043,13 +1083,17 @@ a:hover { color: var(--c-accent-hover); }
 
 .notes {
   padding: 1.5rem 2rem;
-  background: var(--c-white);
-  border-radius: 8px;
+  background: linear-gradient(180deg, var(--c-white), rgba(250,248,245,.6));
+  border-radius: 10px;
   border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-gold);
+  margin-top: 2rem;
+  box-shadow: 0 4px 16px rgba(44,36,32,.04);
 }
 
-.notes p { font-size: .93rem; color: var(--c-text-muted); }
+.notes p { font-size: .93rem; color: var(--c-text-muted); line-height: 1.7; }
 .notes p + p { margin-top: .6rem; }
+.notes p strong { color: var(--c-accent); }
 
 /* === Form === */
 .form {
@@ -1447,9 +1491,19 @@ a:hover { color: var(--c-accent-hover); }
 .feature-row__text p + p { margin-top: 1rem; }
 
 .feature-row__image {
-  border-radius: 8px;
+  position: relative;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(44,36,32,.15);
+  box-shadow: 0 14px 38px rgba(44,36,32,.18);
+}
+
+.feature-row__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 2px solid rgba(201,168,76,.35);
+  pointer-events: none;
 }
 
 .feature-row__image img {
@@ -1457,6 +1511,11 @@ a:hover { color: var(--c-accent-hover); }
   height: 100%;
   object-fit: cover;
   aspect-ratio: 4/3;
+  transition: transform .8s cubic-bezier(.2,.8,.25,1);
+}
+
+@media (hover: hover) {
+  .feature-row__image:hover img { transform: scale(1.04); }
 }
 
 .feature-row--reverse .feature-row__image { order: -1; }
@@ -1696,35 +1755,51 @@ a:hover { color: var(--c-accent-hover); }
   padding: 0;
   margin: 2.5rem 0 0;
   position: relative;
+  counter-reset: itinerary-day;
 }
 
 .itinerary::before {
   content: '';
   position: absolute;
-  left: 9px;
-  top: 10px;
-  bottom: 10px;
+  left: 11px;
+  top: 14px;
+  bottom: 14px;
   width: 2px;
-  background: var(--c-border);
+  background: linear-gradient(180deg, var(--c-gold), rgba(201,168,76,.2));
 }
 
 .itinerary__day {
   position: relative;
-  padding-left: 2.5rem;
-  padding-bottom: 1.6rem;
+  padding: 1rem 1.4rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(44,36,32,.04);
+  transition: transform .3s cubic-bezier(.2,.8,.25,1), box-shadow .3s, border-color .3s;
 }
 
 .itinerary__day::before {
   content: '';
   position: absolute;
-  left: 4px;
-  top: .55rem;
-  width: 12px;
-  height: 12px;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: var(--c-gold);
-  border: 2px solid var(--c-bg);
-  box-shadow: 0 0 0 2px var(--c-gold);
+  border: 3px solid var(--c-bg-alt);
+  box-shadow: 0 0 0 2px var(--c-gold), 0 4px 10px rgba(201,168,76,.4);
+  z-index: 1;
+}
+
+@media (hover: hover) {
+  .itinerary__day:hover {
+    transform: translateX(4px);
+    border-color: var(--c-gold);
+    box-shadow: 0 8px 20px rgba(44,36,32,.07);
+  }
 }
 
 .itinerary__date {
@@ -1745,14 +1820,17 @@ a:hover { color: var(--c-accent-hover); }
 
 .itinerary__place {
   color: var(--c-text) !important;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.02rem !important;
 }
 
 .itinerary__stay {
   font-style: italic;
-  font-size: .9rem !important;
+  font-size: .88rem !important;
   color: var(--c-text-muted);
-  margin-top: .3rem !important;
+  margin-top: .5rem !important;
+  padding-top: .5rem;
+  border-top: 1px dashed var(--c-border);
 }
 
 .pricing--single {
