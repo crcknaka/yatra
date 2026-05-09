@@ -5,5 +5,8 @@
     <p class="footer__note" data-i18n{% if note.html %}-html{% endif %}="{{ note.i18nKey }}">{{ note.text | safe }}</p>
     {%- endfor %}
     <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Yatra.lv. Visas tiesības aizsargātas.</p>
+    <p class="footer__links">
+      <a href="/privacy" data-i18n="footer.privacy">Privātuma politika</a>
+    </p>
   </div>
 </footer>
