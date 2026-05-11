@@ -2097,9 +2097,8 @@ a:hover { color: var(--c-accent-hover); }
   .nav__lang-row {
     display: flex;
     gap: .75rem;
-    margin-top: auto;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--c-border);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--c-border);
   }
 
   .nav__lang-row .lang__option {
