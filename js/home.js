@@ -2,6 +2,7 @@ const slider = document.getElementById('heroSlider');
 if (slider) {
   const slides = slider.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('#heroDots .hero-dot');
+  const bgs = document.querySelectorAll('.hero__bg[data-bg-for]');
   let current = 0;
   let timer = null;
   const interval = 6500;
@@ -11,11 +12,13 @@ if (slider) {
     slides[current].setAttribute('aria-hidden', 'true');
     dots[current]?.classList.remove('hero-dot--active');
     dots[current]?.setAttribute('aria-selected', 'false');
+    bgs[current]?.classList.remove('hero__bg--active');
     current = (idx + slides.length) % slides.length;
     slides[current].classList.add('hero-slide--active');
     slides[current].setAttribute('aria-hidden', 'false');
     dots[current]?.classList.add('hero-dot--active');
     dots[current]?.setAttribute('aria-selected', 'true');
+    bgs[current]?.classList.add('hero__bg--active');
   }
 
   function start() {

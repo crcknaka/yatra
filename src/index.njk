@@ -36,9 +36,13 @@ jsonLd:
 ---
 
 <section class="hero hero--slider" id="hero" aria-roledescription="carousel" aria-label="Yatra ceļojumi">
-  <img class="hero__bg" alt="" aria-hidden="true" fetchpriority="high"
+  <img class="hero__bg hero__bg--active" data-bg-for="0" alt="" aria-hidden="true" fetchpriority="high"
        src="/assets/tea-1200.webp"
        srcset="/assets/tea-480.webp 480w, /assets/tea-800.webp 800w, /assets/tea-1200.webp 1200w, /assets/tea.webp 1600w"
+       sizes="100vw">
+  <img class="hero__bg" data-bg-for="1" alt="" aria-hidden="true" loading="lazy"
+       src="/assets/dienvidindija-1200.webp"
+       srcset="/assets/dienvidindija-480.webp 480w, /assets/dienvidindija-800.webp 800w, /assets/dienvidindija-1200.webp 1200w, /assets/dienvidindija.webp 1600w"
        sizes="100vw">
   <div class="hero__overlay"></div>
 

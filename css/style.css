@@ -351,9 +351,12 @@ a:hover { color: var(--c-accent-hover); }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: .65;
+  opacity: 0;
   filter: saturate(.95);
+  transition: opacity 1.2s ease-in-out;
 }
+
+.hero__bg--active { opacity: .65; }
 
 .hero__overlay {
   position: absolute;
